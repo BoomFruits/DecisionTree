@@ -14,7 +14,7 @@ X_test = test_data.drop(["diagnosis"],axis = 1)
 y_test = test_data["diagnosis"]
 from sklearn.tree import DecisionTreeClassifier #Cay su dung cho bai toan phan lop
 # from sklearn.metrics import confusion
-my_tree = DecisionTreeClassifier(max_depth=11)
+my_tree = DecisionTreeClassifier(max_depth=11) #Độ sâu 11
 my_tree.fit(X_train,y_train)
 #du doan tren du lieu test
 y_pred = my_tree.predict(X_test)
