@@ -160,3 +160,4 @@ if __name__ == "__main__":
     tree = DecisionTreeID3(max_depth = 3, min_samples_split = 2)
     tree.fit(X_train,y_train)
     print(tree.predict(X_test))
+    
