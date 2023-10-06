@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd 
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
-
+from sklearn.metrics import accuracy_score
 class TreeNode(object):
     def __init__(self, ids = None, children = [], entropy = 0, depth = 0):
         self.ids = ids           # index of data in this node
@@ -159,5 +159,7 @@ if __name__ == "__main__":
     y_test = dt_Test.iloc[:, 6]
     tree = DecisionTreeID3(max_depth = 3, min_samples_split = 2)
     tree.fit(X_train,y_train)
-    print(tree.predict(X_test))
+    print(tree)
+    y_pred = tree.predict(X_test)
+    print(accuracy_score(y_pred,y_test))
     
